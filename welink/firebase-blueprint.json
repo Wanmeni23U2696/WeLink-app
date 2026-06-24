@@ -1,0 +1,446 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile representing a client, enterprise, or supplier",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "email": { "type": "string" },
+        "name": { "type": "string" },
+        "profileType": { "type": "string" },
+        "enterpriseType": { "type": "string" },
+        "supplierType": { "type": "string" },
+        "description": { "type": "string" },
+        "address": { "type": "string" },
+        "phone": { "type": "string" }
+      },
+      "required": ["id", "email", "name", "profileType"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Product or service item listed in catalog",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "sellerId": { "type": "string" },
+        "sellerName": { "type": "string" },
+        "sellerType": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "number" },
+        "category": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "stock": { "type": "number" },
+        "unit": { "type": "string" },
+        "rayon": { "type": "string" }
+      },
+      "required": ["id", "sellerId", "title", "price", "stock"]
+    },
+    "JobOffer": {
+      "title": "JobOffer",
+      "description": "Recruitment offer listed by a company",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "companyId": { "type": "string" },
+        "companyName": { "type": "string" },
+        "companyType": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "salary": { "type": "string" },
+        "location": { "type": "string" },
+        "requirements": { "type": "array" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "companyId", "title", "description"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Purchase transaction or raw material order",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "buyerId": { "type": "string" },
+        "buyerName": { "type": "string" },
+        "sellerId": { "type": "string" },
+        "sellerName": { "type": "string" },
+        "productId": { "type": "string" },
+        "productTitle": { "type": "string" },
+        "price": { "type": "number" },
+        "quantity": { "type": "number" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "buyerId", "sellerId", "productId", "price", "quantity", "status"]
+    },
+    "OrderMessage": {
+      "title": "OrderMessage",
+      "description": "Interactive chat message tied to a specific order",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "orderId": { "type": "string" },
+        "senderId": { "type": "string" },
+        "senderName": { "type": "string" },
+        "text": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "orderId", "senderId", "text"]
+    },
+    "JobApplication": {
+      "title": "JobApplication",
+      "description": "Candidacy submission for positive recruitment",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "jobId": { "type": "string" },
+        "jobTitle": { "type": "string" },
+        "companyId": { "type": "string" },
+        "applicantId": { "type": "string" },
+        "applicantName": { "type": "string" },
+        "applicantEmail": { "type": "string" },
+        "applicantPhone": { "type": "string" },
+        "comments": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "jobId", "applicantId", "status"]
+    },
+    "FishLot": {
+      "title": "FishLot",
+      "description": "Traceable maritime lot of seafood supply",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "productId": { "type": "string" },
+        "supplierName": { "type": "string" },
+        "lotNumber": { "type": "string" },
+        "arrivalDate": { "type": "string" },
+        "quantity": { "type": "number" },
+        "currentStock": { "type": "number" },
+        "unit": { "type": "string" },
+        "freshness": { "type": "string" },
+        "temperature": { "type": "string" },
+        "origin": { "type": "string" }
+      },
+      "required": ["id", "productId", "lotNumber", "quantity"]
+    },
+    "FishLossLog": {
+      "title": "FishLossLog",
+      "description": "Record of sanitarily discarded stock",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "productId": { "type": "string" },
+        "productTitle": { "type": "string" },
+        "quantity": { "type": "number" },
+        "unit": { "type": "string" },
+        "reason": { "type": "string" },
+        "date": { "type": "string" },
+        "cost": { "type": "number" }
+      },
+      "required": ["id", "productId", "quantity", "reason", "cost"]
+    },
+    "FishAlert": {
+      "title": "FishAlert",
+      "description": "Client alert subscription for return to stock",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "productId": { "type": "string" },
+        "buyerEmail": { "type": "string" },
+        "clientName": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "sentAt": { "type": "string" }
+      },
+      "required": ["id", "productId", "buyerEmail", "status"]
+    },
+    "HotelRoomCategory": {
+      "title": "HotelRoomCategory",
+      "description": "Room tier or service class category",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "hotelId": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" }
+      },
+      "required": ["id", "hotelId", "name"]
+    },
+    "HotelRoom": {
+      "title": "HotelRoom",
+      "description": "Physical room listing with state, occupancy, and metadata",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "hotelId": { "type": "string" },
+        "number": { "type": "string" },
+        "type": { "type": "string" },
+        "capacity": { "type": "number" },
+        "price": { "type": "number" },
+        "description": { "type": "string" },
+        "equipments": { "type": "array" },
+        "photos": { "type": "array" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "hotelId", "number", "type", "price", "status"]
+    },
+    "HotelReservation": {
+      "title": "HotelReservation",
+      "description": "Room reservation with checks and receipts",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "hotelId": { "type": "string" },
+        "hotelName": { "type": "string" },
+        "clientName": { "type": "string" },
+        "clientEmail": { "type": "string" },
+        "roomNumber": { "type": "string" },
+        "roomType": { "type": "string" },
+        "checkIn": { "type": "string" },
+        "checkOut": { "type": "string" },
+        "totalAmount": { "type": "number" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "hotelId", "clientName", "roomNumber", "status"]
+    },
+    "HotelCoupon": {
+      "title": "HotelCoupon",
+      "description": "Promotional campaign codes",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "hotelId": { "type": "string" },
+        "code": { "type": "string" },
+        "discountType": { "type": "string" },
+        "discountValue": { "type": "number" },
+        "active": { "type": "boolean" }
+      },
+      "required": ["id", "hotelId", "code", "discountType", "discountValue", "active"]
+    },
+    "HotelAuditLog": {
+      "title": "HotelAuditLog",
+      "description": "Operational event log history",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "hotelId": { "type": "string" },
+        "action": { "type": "string" },
+        "details": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["id", "hotelId", "action", "details", "timestamp"]
+    },
+    "HotelFomoSetting": {
+      "title": "HotelFomoSetting",
+      "description": "FOMO notification cards settings",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "hotelId": { "type": "string" },
+        "soundEnabled": { "type": "boolean" },
+        "displayInterval": { "type": "number" },
+        "themeColor": { "type": "string" },
+        "customMessage": { "type": "string" }
+      },
+      "required": ["id", "hotelId", "soundEnabled", "displayInterval"]
+    },
+    "EnterpriseStock": {
+      "title": "EnterpriseStock",
+      "description": "B2B internal catalog stocks records",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "enterpriseId": { "type": "string" },
+        "productId": { "type": "string" },
+        "itemTitle": { "type": "string" },
+        "supplierId": { "type": "string" },
+        "supplierName": { "type": "string" },
+        "costPrice": { "type": "number" },
+        "quantity": { "type": "number" },
+        "unit": { "type": "string" },
+        "lastUpdated": { "type": "string" }
+      },
+      "required": ["id", "enterpriseId", "productId", "quantity"]
+    },
+    "Vente": {
+      "title": "Vente",
+      "description": "Direct sales in physical shops or POS",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "sellerId": { "type": "string" },
+        "productId": { "type": "string" },
+        "productTitle": { "type": "string" },
+        "customerName": { "type": "string" },
+        "price": { "type": "number" },
+        "quantity": { "type": "number" },
+        "totalAmount": { "type": "number" },
+        "paymentMethod": { "type": "string" },
+        "date": { "type": "string" }
+      },
+      "required": ["id", "sellerId", "productId", "price", "quantity", "totalAmount", "date"]
+    },
+    "ButcherLot": {
+      "title": "ButcherLot",
+      "description": "Traceable livestock butcher lot of meat supply",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "productId": { "type": "string" },
+        "supplierName": { "type": "string" },
+        "lotNumber": { "type": "string" },
+        "arrivalDate": { "type": "string" },
+        "quantity": { "type": "number" },
+        "currentStock": { "type": "number" },
+        "unit": { "type": "string" },
+        "freshness": { "type": "string" },
+        "temperature": { "type": "string" },
+        "origin": { "type": "string" },
+        "veterinaryCert": { "type": "string" }
+      },
+      "required": ["id", "productId", "lotNumber", "quantity"]
+    },
+    "ButcherLossLog": {
+      "title": "ButcherLossLog",
+      "description": "Record of sanitarily discarded stock in butcher shop",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "productId": { "type": "string" },
+        "productTitle": { "type": "string" },
+        "quantity": { "type": "number" },
+        "unit": { "type": "string" },
+        "reason": { "type": "string" },
+        "date": { "type": "string" },
+        "cost": { "type": "number" }
+      },
+      "required": ["id", "productId", "quantity", "reason", "cost"]
+    },
+    "ButcherCut": {
+      "title": "ButcherCut",
+      "description": "Record of a meat carcass cut into target products",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "sourceCarcass": { "type": "string" },
+        "sourceWeight": { "type": "number" },
+        "targetProductId": { "type": "string" },
+        "targetWeight": { "type": "number" },
+        "lossWeight": { "type": "number" },
+        "date": { "type": "string" },
+        "piecesCount": { "type": "number" },
+        "operator": { "type": "string" }
+      },
+      "required": ["id", "sourceCarcass", "sourceWeight", "targetProductId", "targetWeight", "lossWeight", "date"]
+    },
+    "RestaurantTable": {
+      "title": "RestaurantTable",
+      "description": "Physical table in restaurant with capacity and zone",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "sellerId": { "type": "string" },
+        "number": { "type": "string" },
+        "capacity": { "type": "number" },
+        "status": { "type": "string" },
+        "zone": { "type": "string" }
+      },
+      "required": ["id", "sellerId", "number", "capacity", "status"]
+    },
+    "RestaurantBooking": {
+      "title": "RestaurantBooking",
+      "description": "Table reservation booking in restaurant",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "buyerId": { "type": "string" },
+        "buyerName": { "type": "string" },
+        "buyerPhone": { "type": "string" },
+        "sellerId": { "type": "string" },
+        "tableId": { "type": "string" },
+        "guestsCount": { "type": "number" },
+        "dateTime": { "type": "string" },
+        "status": { "type": "string" },
+        "notes": { "type": "string" }
+      },
+      "required": ["id", "buyerId", "sellerId", "guestsCount", "dateTime", "status"]
+    },
+    "DishRating": {
+      "title": "DishRating",
+      "description": "Product / dish rate review",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "productId": { "type": "string" },
+        "rating": { "type": "number" },
+        "comment": { "type": "string" },
+        "reviewerName": { "type": "string" },
+        "reviewerId": { "type": "string" },
+        "date": { "type": "string" }
+      },
+      "required": ["id", "productId", "rating", "comment", "reviewerId"]
+    },
+    "CompanyReview": {
+      "title": "CompanyReview",
+      "description": "Enterprise / physical shop rate review",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "companyId": { "type": "string" },
+        "companyName": { "type": "string" },
+        "reviewerId": { "type": "string" },
+        "reviewerName": { "type": "string" },
+        "rating": { "type": "number" },
+        "comment": { "type": "string" },
+        "visitContext": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "companyId", "rating", "comment", "reviewerId"]
+    },
+    "ClientClassification": {
+      "title": "ClientClassification",
+      "description": "Client classification and active profile statistics",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "clientId": { "type": "string" },
+        "primaryInterest": { "type": "string" },
+        "scoreMap": { "type": "object" },
+        "tier": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "clientId", "primaryInterest", "tier"]
+    }
+  },
+  "firestore": {
+    "users": { "schema": "User", "description": "System users collection" },
+    "products": { "schema": "Product", "description": "System catalog items" },
+    "jobOffers": { "schema": "JobOffer", "description": "System recruitment job listings" },
+    "orders": { "schema": "Order", "description": "B2B and Client orders" },
+    "orderMessages": { "schema": "OrderMessage", "description": "Interactive chat messaging threads" },
+    "jobApplications": { "schema": "JobApplication", "description": "Job application documents" },
+    "fishLots": { "schema": "FishLot", "description": "Fishevery maritime traceability system lots" },
+    "fishLossLogs": { "schema": "FishLossLog", "description": "Sanitary discard sheets for fish stock" },
+    "fishAlerts": { "schema": "FishAlert", "description": "In-stock alerts waitlist" },
+    "butcherLots": { "schema": "ButcherLot", "description": "Traceable livestock butcher lots" },
+    "butcherLossLogs": { "schema": "ButcherLossLog", "description": "Sanitary discard sheets for butcher stock" },
+    "butcherCuts": { "schema": "ButcherCut", "description": "Meat carcass cutting sheets" },
+    "hotelRoomCategories": { "schema": "HotelRoomCategory", "description": "Room categories" },
+    "hotelRooms": { "schema": "HotelRoom", "description": "Rooms in hotels" },
+    "hotelReservations": { "schema": "HotelReservation", "description": "Active/historic room reservations" },
+    "hotelCoupons": { "schema": "HotelCoupon", "description": "Hotel promotion voucher coupon sheets" },
+    "hotelAuditLogs": { "schema": "HotelAuditLog", "description": "Audit trails for hotels operations" },
+    "hotelFomoSettings": { "schema": "HotelFomoSetting", "description": "Fomo layout triggers setup" },
+    "enterpriseStocks": { "schema": "EnterpriseStock", "description": "Enterprise physical storage ingredients and item stocks" },
+    "ventes": { "schema": "Vente", "description": "Record database of direct merchant sales" },
+    "restaurantTables": { "schema": "RestaurantTable", "description": "Restaurant tables layout sheets" },
+    "restaurantBookings": { "schema": "RestaurantBooking", "description": "Restaurant table booking reservations" },
+    "dishRatings": { "schema": "DishRating", "description": "Reviews and ratings for restaurant dishes" },
+    "companyReviews": { "schema": "CompanyReview", "description": "Reviews and ratings for local neighborhood businesses" },
+    "clientClassifications": { "schema": "ClientClassification", "description": "Client profile classification interest analytics" }
+  }
+}

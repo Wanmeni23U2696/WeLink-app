@@ -1,0 +1,1312 @@
+@import "tailwindcss";
+
+:root {
+  /* Default: Light Theme - Sophisticated translucent glassmorphic look */
+  --slate-950: rgba(248, 250, 252, 0.32); /* Let the gorgeous light-theme background shine beautifully with 68% visibility */
+  --slate-900: rgba(255, 255, 255, 1.0);  /* Solid card background for perfect visibility and maximum clarity */
+  --slate-850: rgba(241, 245, 249, 1.0);  /* Soft slate box (translucent slate-100) */
+  --slate-800: rgba(220, 225, 232, 1.0);  /* Solid, distinct light borders */
+  --slate-100: #0f172a; /* Main text (slate-900) */
+  --slate-150: #1e293b; /* Secondary text (slate-800) */
+  --slate-200: #334155; /* Accent text (slate-705) */
+  --slate-300: #0f172a; /* Secondary titles */
+  --slate-400: #475569; /* Quiet text (slate-600) */
+  --slate-500: #64748b; /* Very quiet text */
+  --slate-900-90: rgba(255, 255, 255, 0.92); /* Header opacity in light mode */
+  
+  --brand-indigo: #4f46e5;
+  --app-bg-image: url('./assets/images/global_light_bg_clean_1780930772375.png');
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.15s ease;
+}
+
+/* Dark Theme overrides when .dark is present */
+.dark, :root.dark {
+  --slate-950: rgba(2, 6, 23, 0.70); /* Distinct midnight page background to make e-commerce background blend ideally */
+  --slate-900: rgba(15, 23, 42, 0.94); /* Substantial card background with great contrast */
+  --slate-850: rgba(19, 30, 53, 0.96); /* Elegant dark panel focus */
+  --slate-800: rgba(30, 41, 59, 0.85); /* Solid dark border structure */
+  --slate-100: #f1f5f9; /* White-ish text (slate-100) */
+  --slate-150: #cbd5e1; /* Light gray text (slate-150) */
+  --slate-200: #e2e8f0; /* Soft text (slate-200) */
+  --slate-300: #cbd5e1; /* Secondary titles */
+  --slate-400: #94a3b8; /* Quiet text (slate-400) */
+  --slate-500: #64748b; /* Very quiet text */
+  --slate-900-90: rgba(15, 23, 42, 0.90); /* Header opacity in dark mode */
+  --app-bg-image: url('./assets/images/global_dark_bg_clean_1780930753509.png');
+}
+
+/* ==========================================================================
+   EXCLUSIVE SHOWCASE PORTALS: BESPOKE DISTINCT ENTERPRISE VITRINES
+   ========================================================================== */
+
+/* 1. CLOTHING BOUTIQUE (Mode & Vêtements) - Cozy luxury sand, terracotta, & deep gold styling */
+.enterprise-bg-vetement {
+  --app-bg-image: url('./assets/images/clothing_boutique_bg_1780932601648.png') !important;
+  
+  /* Extremely transparent page background to let the clothing vitrine be fully visible */
+  --slate-950: rgba(43, 34, 28, 0.08) !important; 
+  --slate-900: rgba(249, 245, 237, 0.96) !important; /* Elegant warm ivory/cream solid card */
+  --slate-850: rgba(240, 232, 218, 0.98) !important; /* Soft warm sand panel text area */
+  --slate-800: rgba(218, 203, 185, 0.92) !important; /* Soft warm gold/bronze border */
+  
+  --slate-100: #291c10 !important; /* Elegant deep copper/brown text title */
+  --slate-150: #42301f !important; /* Warm coffee body text */
+  --slate-200: #ab6a25 !important; /* Soft golden terracotta accent text */
+  --slate-300: #291c10 !important;
+  --slate-400: #7a634e !important;
+  --slate-500: #937b64 !important;
+  --brand-indigo: #c67c33 !important; /* Terracotta-clay active buttons instead of generic indigo */
+  --slate-900-90: rgba(249, 245, 237, 0.92) !important;
+}
+
+/* Warm Dark Mode adaptation for Clothing Boutique (luxurious cozy cedar wood/brass) */
+.dark .enterprise-bg-vetement, :root.dark .enterprise-bg-vetement {
+  --slate-950: rgba(16, 12, 9, 0.22) !important; /* Clear dark image backdrop */
+  --slate-900: rgba(45, 36, 29, 0.94) !important; /* Mahogany cedar wood base */
+  --slate-850: rgba(58, 47, 38, 0.97) !important;
+  --slate-800: rgba(94, 76, 62, 0.85) !important; /* Brushed brass border */
+  
+  --slate-100: #f6ebd8 !important; /* Warm sand light text */
+  --slate-150: #dfcfbc !important; /* Gentle beige medium text */
+  --slate-200: #e2a86d !important; /* Warm glowing honeycomb accent */
+  --slate-300: #f6ebd8 !important;
+  --slate-400: #aa8c73 !important;
+  --slate-500: #8c715c !important;
+  --brand-indigo: #d4853b !important; /* Amber-gold theme button */
+  --slate-900-90: rgba(45, 36, 29, 0.90) !important;
+}
+
+/* Keep the background image completely crisp and visible, minifying the blur inside clothing shops */
+.enterprise-bg-vetement #welink-main-sidebar,
+.enterprise-bg-vetement aside,
+.enterprise-bg-vetement main {
+  backdrop-filter: blur(0.5px) !important;
+  -webkit-backdrop-filter: blur(0.5px) !important;
+}
+
+/* 2. ARTISANAL BISTRO RESTAURANT - Intimate warm candlelight, cozy slate, & brick orange tints */
+.enterprise-bg-restaurant {
+  --app-bg-image: url('./assets/images/restaurant_bistro_bg_1780932652135.png') !important;
+  
+  --slate-950: rgba(22, 18, 15, 0.12) !important; /* High showcase visibility */
+  --slate-900: rgba(254, 252, 250, 0.97) !important; /* Polished warm dining white card */
+  --slate-850: rgba(246, 241, 235, 0.98) !important;
+  --slate-800: rgba(228, 220, 210, 0.92) !important;
+  
+  --slate-100: #1c1511 !important;
+  --slate-150: #3f322b !important;
+  --slate-200: #8b3c0c !important; /* Brick warm orange */
+  --slate-300: #1c1511 !important;
+  --slate-400: #806b5f !important;
+  --slate-500: #998375 !important;
+  --brand-indigo: #df5b0f !important; /* Spicy gourmet orange */
+  --slate-900-90: rgba(254, 252, 250, 0.92) !important;
+}
+
+.dark .enterprise-bg-restaurant, :root.dark .enterprise-bg-restaurant {
+  --slate-950: rgba(10, 8, 7, 0.32) !important;
+  --slate-900: rgba(27, 21, 18, 0.95) !important; /* Charcoal brick smoke card */
+  --slate-850: rgba(39, 31, 27, 0.97) !important;
+  --slate-800: rgba(76, 61, 53, 0.82) !important;
+  
+  --slate-100: #fbf9f8 !important;
+  --slate-150: #e3d7d0 !important;
+  --slate-200: #f78d46 !important; /* Luminous saffron amber */
+  --slate-300: #fbf9f8 !important;
+  --slate-400: #ad9c92 !important;
+  --slate-500: #8a7a71 !important;
+  --brand-indigo: #f06a1d !important;
+  --slate-900-90: rgba(27, 21, 18, 0.90) !important;
+}
+
+.enterprise-bg-restaurant #welink-main-sidebar,
+.enterprise-bg-restaurant aside,
+.enterprise-bg-restaurant main {
+  backdrop-filter: blur(0.5px) !important;
+  -webkit-backdrop-filter: blur(0.5px) !important;
+}
+
+/* 3. MODERN SUPERMARKET & HYPERMARKET - Bright, fresh, colorful grocery look with sage & emerald tones */
+.enterprise-bg-supermarche {
+  --app-bg-image: url('./assets/images/supermarket_grocery_bg_1780933709520.png') !important;
+  
+  /* Extremely transparent to let the shopping shelves backdrop shine */
+  --slate-950: rgba(15, 23, 20, 0.05) !important; 
+  --slate-900: rgba(240, 248, 245, 0.96) !important; /* Elegant fresh mint solid card */
+  --slate-850: rgba(225, 240, 235, 0.98) !important; /* Softer organic mint card area */
+  --slate-800: rgba(182, 214, 204, 0.92) !important; /* Light sage teal border */
+  
+  --slate-100: #0c2f24 !important; /* Rich organic deep slate title text */
+  --slate-150: #1b3d33 !important; /* Subtitle/body text */
+  --slate-200: #10b981 !important; /* Bright emerald green accent */
+  --slate-300: #0c2f24 !important;
+  --slate-400: #49786a !important;
+  --slate-500: #588779 !important;
+  --brand-indigo: #059669 !important; /* Emerald active buttons instead of dark blue */
+  --slate-900-90: rgba(240, 248, 245, 0.92) !important;
+}
+
+/* Dark Mode adaptation for Supermarket (luxurious dark organic mood) */
+.dark .enterprise-bg-supermarche, :root.dark .enterprise-bg-supermarche {
+  --slate-950: rgba(10, 15, 12, 0.20) !important; 
+  --slate-900: rgba(16, 28, 24, 0.94) !important; /* Forest deep charcoal base */
+  --slate-850: rgba(24, 40, 35, 0.97) !important;
+  --slate-800: rgba(43, 74, 65, 0.85) !important; /* Sage green border */
+  
+  --slate-100: #ecfdf5 !important; /* Mint cream text */
+  --slate-150: #a7f3d0 !important; /* Soft sage text */
+  --slate-200: #34d399 !important; /* Luminous emerald tag */
+  --slate-300: #ecfdf5 !important;
+  --slate-400: #6ee7b7 !important;
+  --slate-500: #059669 !important;
+  --brand-indigo: #10b981 !important;
+  --slate-900-90: rgba(16, 28, 24, 0.90) !important;
+}
+
+.enterprise-bg-supermarche #welink-main-sidebar,
+.enterprise-bg-supermarche aside,
+.enterprise-bg-supermarche main {
+  backdrop-filter: blur(0.5px) !important;
+  -webkit-backdrop-filter: blur(0.5px) !important;
+}
+
+/* 4. TRADITIONAL STREET MARKET (Marché de quartier) - Warm, rustic, fresh marketplace with natural wooden and amber tones */
+.enterprise-bg-marche {
+  --app-bg-image: url('./assets/images/market_etalage_bg_1780937807541.png') !important;
+  
+  /* Extremely transparent to let the market backdrop shine beautifully */
+  --slate-950: rgba(20, 16, 12, 0.05) !important; 
+  --slate-900: rgba(254, 252, 247, 0.96) !important; /* Elegant warm off-white linen solid card */
+  --slate-850: rgba(246, 241, 232, 0.98) !important; /* Softer organic canvas card area */
+  --slate-800: rgba(215, 202, 185, 0.92) !important; /* Rustic wood beige border */
+  
+  --slate-100: #2d1e10 !important; /* Deep dark cocoa/coffee title text */
+  --slate-150: #4a341d !important; /* Warm terracotta / earth body text */
+  --slate-200: #d97706 !important; /* Amber / warm orange accent */
+  --slate-300: #2d1e10 !important;
+  --slate-400: #8c6f50 !important;
+  --slate-500: #ab8d6d !important;
+  --brand-indigo: #cb5a12 !important; /* Warm orange active buttons */
+  --slate-900-90: rgba(254, 252, 247, 0.92) !important;
+}
+
+/* Dark Mode adaptation for Traditional Market (luxurious cozy night market vibe with dynamic warm glowing amber) */
+.dark .enterprise-bg-marche, :root.dark .enterprise-bg-marche {
+  --slate-950: rgba(12, 9, 7, 0.20) !important; 
+  --slate-900: rgba(30, 24, 20, 0.94) !important; /* Cozy night market charcoal wood base */
+  --slate-850: rgba(43, 35, 30, 0.97) !important;
+  --slate-800: rgba(77, 60, 50, 0.85) !important; /* Rustic amber wood border */
+  
+  --slate-100: #fefcfb !important; /* Linen light text */
+  --slate-150: #f3dfd2 !important; /* Soft wheat text */
+  --slate-200: #fbbf24 !important; /* Radiant sunset amber tags */
+  --slate-300: #fefcfb !important;
+  --slate-400: #f59e0b !important;
+  --slate-500: #cb5a12 !important;
+  --brand-indigo: #f97316 !important; /* Sunset orange active theme buttons */
+  --slate-900-90: rgba(30, 24, 20, 0.90) !important;
+}
+
+.enterprise-bg-marche #welink-main-sidebar,
+.enterprise-bg-marche aside,
+.enterprise-bg-marche main {
+  backdrop-filter: blur(0.5px) !important;
+  -webkit-backdrop-filter: blur(0.5px) !important;
+}
+
+/* 5. BOUTIQUE HOTEL LUXE - Warm gold, bronze drapery, & deep dark mahogany wood tones */
+.enterprise-bg-hotel {
+  --app-bg-image: url('./assets/images/boutique_hotel_luxurious_bg_1781016397633.png') !important;
+
+  /* Extremely transparent page background to let the luxurious hotel room background remain fully visible */
+  --slate-950: rgba(18, 14, 11, 0.05) !important; 
+  --slate-900: rgba(38, 28, 21, 0.94) !important; /* Elegant warm mahogany/cedar solid card */
+  --slate-850: rgba(56, 42, 31, 0.97) !important; /* Warm sand panel text area */
+  --slate-800: rgba(133, 102, 75, 0.82) !important; /* Soft warm bronze/gold border */
+  
+  --slate-100: #fbf6f0 !important; /* Elegant soft ivory/cream text title */
+  --slate-150: #e7dfd5 !important; /* Gentle sand/beige medium text */
+  --slate-200: #d4af37 !important; /* Real gold/bronze highlighted active tags */
+  --slate-300: #fbf6f0 !important;
+  --slate-400: #bc9e82 !important;
+  --slate-500: #937b67 !important;
+  --brand-indigo: #c29668 !important; /* Camel brass active elements */
+  --slate-900-90: rgba(38, 28, 21, 0.90) !important;
+}
+
+/* For hotel, we NEVER use white/light backgrounds, even in light mode! "les couleurs de la cartes doivent etre dans la meme teinte que cette image, pas en blanc" */
+html:not(.dark) .enterprise-bg-hotel {
+  --app-bg-image: url('./assets/images/boutique_hotel_luxurious_bg_1781016397633.png') !important;
+  --slate-950: rgba(18, 14, 11, 0.05) !important; 
+  --slate-900: rgba(38, 28, 21, 0.94) !important; 
+  --slate-850: rgba(56, 42, 31, 0.97) !important; 
+  --slate-800: rgba(133, 102, 75, 0.82) !important; 
+  
+  --slate-100: #fbf6f0 !important; 
+  --slate-150: #e7dfd5 !important; 
+  --slate-200: #d4af37 !important; 
+  --slate-300: #fbf6f0 !important;
+  --slate-400: #bc9e82 !important;
+  --slate-500: #937b67 !important;
+  --brand-indigo: #c29668 !important; 
+  --slate-900-90: rgba(38, 28, 21, 0.90) !important;
+}
+
+.enterprise-bg-hotel #welink-main-sidebar,
+.enterprise-bg-hotel aside,
+.enterprise-bg-hotel main {
+  backdrop-filter: blur(0.5px) !important;
+  -webkit-backdrop-filter: blur(0.5px) !important;
+}
+
+/* Global body and workspace classes to ensure background visible with beautiful scale/position */
+html, body, #root, #app-workspace-main {
+  background-image: var(--app-bg-image) !important;
+  background-size: cover !important;
+  background-position: center !important; /* Centered beautifully - no more search bar or text crop needed */
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  min-height: 100vh;
+}
+
+/* Add an elegant backdrop blur on all cards and major workspace parts for flow effect, but NEVER on the notifications menu or major layout blocks */
+div[class*="bg-slate-905"]:not(#notifications-dropdown-menu):not(#cart-dropdown-menu),
+div[class*="bg-slate-900"]:not([id="notifications-wrapper"]):not(#notifications-dropdown-menu):not(#cart-dropdown-menu),
+div[class*="bg-slate-950"]:not([id="notifications-wrapper"]):not(#notifications-dropdown-menu):not(#cart-dropdown-menu),
+section[class*="bg-slate-90"] {
+  backdrop-filter: blur(2px) !important;
+  -webkit-backdrop-filter: blur(2px) !important;
+}
+
+/* Specific overrides to keep the notifications dropdown completely solid, sharp, well-visible and without backdrop blur */
+#notifications-dropdown-menu,
+#cart-dropdown-menu {
+  position: absolute !important;
+  right: 0 !important;
+  top: 100% !important;
+  margin-top: 0.5rem !important;
+  background-color: #0c101d !important; /* solid, 100% opaque deep dark color */
+  background: #0c101d !important;
+  color: #f1f5f9 !important;
+  border: 1px solid #6366f1 !important; /* Indigo border! */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.95), 0 0 15px rgba(99, 102, 241, 0.15) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  z-index: 99999999 !important;
+  opacity: 1 !important;
+}
+
+/* Ensure no transparency or blur inside boutique, restaurant, supermarket etc. overrides this solid dark bg */
+.enterprise-bg-vetement #notifications-dropdown-menu,
+.enterprise-bg-vetement #cart-dropdown-menu,
+.enterprise-bg-restaurant #notifications-dropdown-menu,
+.enterprise-bg-restaurant #cart-dropdown-menu,
+.enterprise-bg-supermarche #notifications-dropdown-menu,
+.enterprise-bg-supermarche #cart-dropdown-menu,
+.enterprise-bg-hotel #notifications-dropdown-menu,
+.enterprise-bg-hotel #cart-dropdown-menu {
+  background-color: #0c0a09 !important; /* solid dark chocolate or charcoal slate */
+  background: #0c0a09 !important;
+  color: #fafaf9 !important;
+  border-color: #c67c33 !important; /* Terracotta style highlight */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.95), 0 0 15px rgba(198, 124, 51, 0.15) !important;
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+}
+
+html:not(.dark) #notifications-dropdown-menu,
+html:not(.dark) #cart-dropdown-menu {
+  background-color: #ffffff !important; /* solid white */
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #4f46e5 !important; /* highlight indigo border */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(79, 70, 229, 0.05) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  z-index: 99999999 !important;
+  opacity: 1 !important;
+}
+
+html:not(.dark) .enterprise-bg-vetement #notifications-dropdown-menu,
+html:not(.dark) .enterprise-bg-vetement #cart-dropdown-menu,
+html:not(.dark) .enterprise-bg-[#0c0a09] #notifications-dropdown-menu,
+html:not(.dark) .enterprise-bg-[#0c0a09] #cart-dropdown-menu,
+html:not(.dark) .enterprise-bg-restaurant #notifications-dropdown-menu,
+html:not(.dark) .enterprise-bg-restaurant #cart-dropdown-menu,
+html:not(.dark) .enterprise-bg-supermarche #notifications-dropdown-menu,
+html:not(.dark) .enterprise-bg-supermarche #cart-dropdown-menu,
+html:not(.dark) .enterprise-bg-hotel #notifications-dropdown-menu,
+html:not(.dark) .enterprise-bg-hotel #cart-dropdown-menu {
+  background-color: #ffffff !important; /* solid white */
+  background: #ffffff !important;
+  color: #1c1511 !important;
+  border-color: #c67c33 !important;
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+}
+
+@theme {
+  --color-slate-950: var(--slate-950);
+  --color-slate-900: var(--slate-900);
+  --color-slate-850: var(--slate-850);
+  --color-slate-800: var(--slate-800);
+  --color-slate-100: var(--slate-100);
+  --color-slate-150: var(--slate-150);
+  --color-slate-200: var(--slate-200);
+  --color-slate-300: var(--slate-300);
+  --color-slate-400: var(--slate-400);
+  --color-slate-500: var(--slate-500);
+  --color-slate-900\/90: var(--slate-900-90);
+}
+
+/* Custom modern WeLink ambient backgrounds - smooth and beautiful, glowing over our global image */
+.bg-welink-ambient {
+  background: radial-gradient(circle at 10% 15%, rgba(6, 182, 212, 0.12) 0%, transparent 45%),
+              radial-gradient(circle at 90% 85%, rgba(99, 102, 241, 0.08) 0%, transparent 45%),
+              var(--app-bg-image) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+.dark .bg-welink-ambient {
+  background: radial-gradient(circle at 20% 15%, rgba(6, 182, 212, 0.16) 0%, transparent 45%),
+              radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.12) 0%, transparent 50%),
+              var(--app-bg-image) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+/* Beautiful custom glassy card shadows */
+.shadow-welink {
+  box-shadow: 0 4px 20px -2px rgba(2, 6, 23, 0.12), 0 2px 10px -1px rgba(6, 182, 212, 0.03);
+}
+.dark .shadow-welink {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(255, 255, 255, 0.03);
+}
+
+/* Enhance transitions on major elements for dark/light switch comfort */
+div, header, main, section, button, input, select, textarea, span, h1, h2, h3, h4, h5, h6, p, a, svg {
+  transition-property: background-color, border-color, color, text-decoration-color, fill, stroke;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* When the app is in light mode, adjust plain text overlays and text-white elements */
+html:not(.dark) h1:not(.keep-white):not([class*="keep-white"]), 
+html:not(.dark) h2:not(.keep-white):not([class*="keep-white"]), 
+html:not(.dark) h3:not(.keep-white):not([class*="keep-white"]), 
+html:not(.dark) h4:not(.keep-white):not([class*="keep-white"]), 
+html:not(.dark) h5:not(.keep-white):not([class*="keep-white"]), 
+html:not(.dark) h6:not(.keep-white):not([class*="keep-white"]) {
+  color: #0f172a !important;
+}
+
+/* Intelligent text-white mapping for light mode */
+html:not(.dark) .text-white:not([class*="bg-indigo"]):not([class*="bg-emerald"]):not([class*="bg-green"]):not([class*="bg-violet"]):not([class*="bg-pink"]):not([class*="bg-red"]):not([class*="bg-rose"]):not([class*="bg-blue"]):not(.keep-white):not([class*="keep-white"]):not([class*="bg-black"]):not([class*="bg-slate-900"]):not([class*="bg-slate-850"]) {
+  color: #0f172a !important;
+}
+
+/* Global Light Mode High-Contrast text accessibility overrides */
+html:not(.dark) .text-slate-50,
+html:not(.dark) .text-slate-100,
+html:not(.dark) .text-slate-150,
+html:not(.dark) .text-slate-200,
+html:not(.dark) .text-slate-300,
+html:not(.dark) .text-zinc-50,
+html:not(.dark) .text-zinc-100,
+html:not(.dark) .text-zinc-200,
+html:not(.dark) .text-zinc-300,
+html:not(.dark) .text-gray-50,
+html:not(.dark) .text-gray-100,
+html:not(.dark) .text-gray-200,
+html:not(.dark) .text-gray-300,
+html:not(.dark) .text-neutral-50,
+html:not(.dark) .text-neutral-100,
+html:not(.dark) .text-neutral-200,
+html:not(.dark) .text-neutral-300 {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .text-slate-400,
+html:not(.dark) .text-zinc-400,
+html:not(.dark) .text-gray-400,
+html:not(.dark) .text-neutral-400 {
+  color: #1e293b !important;
+}
+
+html:not(.dark) .text-slate-500,
+html:not(.dark) .text-zinc-500,
+html:not(.dark) .text-gray-500,
+html:not(.dark) .text-neutral-500 {
+  color: #334155 !important;
+}
+
+html:not(.dark) .text-indigo-100,
+html:not(.dark) .text-indigo-200,
+html:not(.dark) .text-indigo-300 {
+  color: #312e81 !important;
+}
+html:not(.dark) .text-indigo-400 {
+  color: #4338ca !important;
+}
+
+html:not(.dark) .text-violet-100,
+html:not(.dark) .text-violet-200,
+html:not(.dark) .text-violet-300 {
+  color: #4c1d95 !important;
+}
+html:not(.dark) .text-violet-400 {
+  color: #6d28d9 !important;
+}
+
+html:not(.dark) .text-emerald-100,
+html:not(.dark) .text-emerald-200,
+html:not(.dark) .text-emerald-300 {
+  color: #064e3b !important;
+}
+html:not(.dark) .text-emerald-400 {
+  color: #047857 !important;
+}
+
+html:not(.dark) .text-green-100,
+html:not(.dark) .text-green-200,
+html:not(.dark) .text-green-300 {
+  color: #14532d !important;
+}
+html:not(.dark) .text-green-400 {
+  color: #15803d !important;
+}
+
+html:not(.dark) .text-blue-100,
+html:not(.dark) .text-blue-200,
+html:not(.dark) .text-blue-300 {
+  color: #0c4a6e !important;
+}
+html:not(.dark) .text-blue-400 {
+  color: #0369a1 !important;
+}
+
+html:not(.dark) .text-pink-100,
+html:not(.dark) .text-pink-200,
+html:not(.dark) .text-pink-300 {
+  color: #831843 !important;
+}
+html:not(.dark) .text-pink-400 {
+  color: #be185d !important;
+}
+
+html:not(.dark) .text-rose-100,
+html:not(.dark) .text-rose-200,
+html:not(.dark) .text-rose-300 {
+  color: #881337 !important;
+}
+html:not(.dark) .text-rose-400 {
+  color: #be123c !important;
+}
+
+html:not(.dark) .text-amber-100,
+html:not(.dark) .text-amber-200,
+html:not(.dark) .text-amber-300 {
+  color: #78350f !important;
+}
+html:not(.dark) .text-amber-400 {
+  color: #b45309 !important;
+}
+
+/* Ensure active/selected tabs and elements with active class maintain their readable styles */
+html:not(.dark) .bg-indigo-600,
+html:not(.dark) .bg-indigo-600 *,
+html:not(.dark) .bg-indigo-700,
+html:not(.dark) .bg-indigo-700 *,
+html:not(.dark) .bg-emerald-600,
+html:not(.dark) .bg-emerald-600 *,
+html:not(.dark) .bg-rose-600,
+html:not(.dark) .bg-rose-600 *,
+html:not(.dark) .bg-pink-600,
+html:not(.dark) .bg-pink-600 * {
+  color: #ffffff !important;
+}
+
+/* Force body default text color in light mode if not specified */
+html:not(.dark),
+html:not(.dark) body,
+html:not(.dark) #root,
+html:not(.dark) #app-workspace-main {
+  color: #0f172a !important;
+}
+
+html:not(.dark) ::placeholder {
+  color: #64748b !important;
+}
+
+/* Force elements with keep-white or inside keep-white to stay white in light mode */
+.keep-white, [class*="keep-white"] {
+  color: #ffffff !important;
+}
+
+html:not(.dark) .keep-white,
+html:not(.dark) [class*="keep-white"],
+html:not(.dark) .keep-white h1,
+html:not(.dark) .keep-white h2,
+html:not(.dark) .keep-white h3,
+html:not(.dark) .keep-white h4,
+html:not(.dark) .keep-white h5,
+html:not(.dark) .keep-white h6,
+html:not(.dark) [class*="keep-white"] h1,
+html:not(.dark) [class*="keep-white"] h2,
+html:not(.dark) [class*="keep-white"] h3,
+html:not(.dark) [class*="keep-white"] h4,
+html:not(.dark) [class*="keep-white"] h5,
+html:not(.dark) [class*="keep-white"] h6,
+html:not(.dark) [class*="bg-black"] h1,
+html:not(.dark) [class*="bg-black"] h2,
+html:not(.dark) [class*="bg-black"] h3,
+html:not(.dark) [class*="bg-black"] h4,
+html:not(.dark) [class*="bg-black"] h5,
+html:not(.dark) [class*="bg-black"] h6,
+html:not(.dark) [class*="bg-black"] span,
+html:not(.dark) [class*="bg-black"] strong {
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   6. ALIMENTATION / ÉPICERIE - Warm, cozy, spice/ochre & cinnamon card tones with rich amber accents
+   ========================================================================== */
+.enterprise-bg-alimentation {
+  --app-bg-image: url('./assets/images/grocery_epicerie_spices_bg_1781026049545.png') !important;
+  
+  /* Extremely transparent page background so the stunning spices backdrop is fully visible */
+  --slate-950: rgba(28, 18, 12, 0.05) !important; 
+  --slate-900: rgba(54, 38, 25, 0.0) !important; /* Fully transparent card backgrounds */
+  --slate-850: rgba(71, 50, 32, 0.0) !important; /* Fully transparent panel focus */
+  --slate-800: rgba(225, 145, 65, 0.35) !important; /* Warm ochre outline/borders */
+  
+  --slate-100: #fbbf24 !important; /* Glowing saffron golden main title - no whites! */
+  --slate-150: #f59e0b !important; /* Rich warm amber body words (no white!) */
+  --slate-200: #ef8a32 !important; /* Deep cinnamon spice orange tags */
+  --slate-300: #f59e0b !important;
+  --slate-400: #d97706 !important; /* Amber-brown secondary labels */
+  --slate-500: #b45309 !important; /* Terracotta-clay */
+  --brand-indigo: #f97316 !important; /* Vibrant fiery orange active buttons instead of indigo */
+  --slate-900-90: rgba(54, 38, 25, 0.0) !important;
+}
+
+/* We also make it stay dark and warm in light mode so it NEVER becomes white! */
+html:not(.dark) .enterprise-bg-alimentation {
+  --app-bg-image: url('./assets/images/grocery_epicerie_spices_bg_1781026049545.png') !important;
+  --slate-950: rgba(28, 18, 12, 0.05) !important; 
+  --slate-900: rgba(54, 38, 25, 0.0) !important; 
+  --slate-850: rgba(71, 50, 32, 0.0) !important; 
+  --slate-800: rgba(225, 145, 65, 0.35) !important; 
+  
+  --slate-100: #fbbf24 !important; /* Gold/Ochre */
+  --slate-150: #f59e0b !important; /* Warm amber (no white) */
+  --slate-200: #ef8a32 !important; 
+  --slate-300: #f59e0b !important;
+  --slate-400: #d97706 !important;
+  --slate-500: #b45309 !important;
+  --brand-indigo: #f97316 !important; 
+  --slate-900-90: rgba(54, 38, 25, 0.0) !important;
+}
+
+.enterprise-bg-alimentation #welink-main-sidebar,
+.enterprise-bg-alimentation aside,
+.enterprise-bg-alimentation main {
+  backdrop-filter: blur(0.5px) !important;
+  -webkit-backdrop-filter: blur(0.5px) !important;
+}
+
+/* ==========================================================================
+   7. SECRÉTARIAT & MULTISERVICE PRINT - Warm wooden-bookshop and office ambient yellow-amber tone
+   ========================================================================== */
+.enterprise-bg-secretariat {
+  --app-bg-image: url('./assets/images/secretariat_bureautique_bg_1781086315338.png') !important;
+  
+  --slate-950: rgba(30, 20, 15, 0.05) !important; 
+  --slate-900: rgba(45, 32, 20, 0.0) !important; /* Fully transparent card backgrounds */
+  --slate-850: rgba(60, 42, 28, 0.0) !important; /* Fully transparent panel focus */
+  --slate-800: rgba(234, 179, 8, 0.35) !important; /* Soft warm turmeric yellow/ochre borders */
+  
+  --slate-100: #fbbf24 !important; /* Glowing warm golden yellow (no bland white) */
+  --slate-150: #f59e0b !important; /* Bright amber secondary description text */
+  --slate-200: #ea580c !important; /* Vibrant terracotta orange tag accents */
+  --slate-300: #fbbf24 !important;
+  --slate-400: #d97706 !important; /* Rich amber-brown labels */
+  --slate-500: #b45309 !important; /* Warm ochre */
+  --brand-indigo: #ea580c !important; /* Hot spiced orange buttons matching the warm tone */
+  --slate-900-90: rgba(45, 32, 20, 0.0) !important;
+}
+
+html:not(.dark) .enterprise-bg-secretariat {
+  --app-bg-image: url('./assets/images/secretariat_bureautique_bg_1781086315338.png') !important;
+  --slate-950: rgba(30, 20, 15, 0.05) !important; 
+  --slate-900: rgba(45, 32, 20, 0.0) !important; 
+  --slate-850: rgba(60, 42, 28, 0.0) !important; 
+  --slate-800: rgba(234, 179, 8, 0.35) !important; 
+  
+  --slate-100: #fbbf24 !important; 
+  --slate-150: #f59e0b !important; 
+  --slate-200: #ea580c !important; 
+  --slate-300: #fbbf24 !important;
+  --slate-400: #d97706 !important;
+  --slate-500: #b45309 !important;
+  --brand-indigo: #ea580c !important; 
+  --slate-900-90: rgba(45, 32, 20, 0.0) !important;
+}
+
+.enterprise-bg-secretariat #welink-main-sidebar,
+.enterprise-bg-secretariat aside,
+.enterprise-bg-secretariat main {
+  backdrop-filter: blur(0.5px) !important;
+  -webkit-backdrop-filter: blur(0.5px) !important;
+}
+
+/* ==========================================================================
+   8. AGRICULTEUR / MARAICHER - Soil brown / sunset amber & golden warm tones matching the tractor image
+   ========================================================================== */
+.enterprise-bg-agriculteur {
+  --app-bg-image: url('./assets/images/agriculteur_maraicher_bg_1781088890833.png') !important;
+  
+  --slate-950: rgba(25, 15, 5, 0.05) !important;
+  --slate-900: rgba(45, 30, 15, 0.0) !important; /* Fully transparent card backgrounds */
+  --slate-850: rgba(60, 40, 20, 0.0) !important; /* Fully transparent panel focus */
+  --slate-800: rgba(245, 158, 11, 0.35) !important; /* Warm sunset gold orange borders */
+  
+  --slate-100: #fde047 !important; /* Glowing warm tractor sunflower yellow - no whites! */
+  --slate-150: #fbbf24 !important; /* Golden sunset secondary orange text */
+  --slate-200: #f97316 !important; /* Tractor orange highlight */
+  --slate-300: #fbbf24 !important;
+  --slate-400: #ea580c !important; /* Warm golden brown labels */
+  --slate-500: #ca8a04 !important; /* Earth yellow */
+  --brand-indigo: #eab308 !important; /* Bright tractor sunflower yellow buttons */
+  --slate-900-90: rgba(45, 30, 15, 0.0) !important;
+}
+
+html:not(.dark) .enterprise-bg-agriculteur {
+  --app-bg-image: url('./assets/images/agriculteur_maraicher_bg_1781088890833.png') !important;
+  --slate-950: rgba(25, 15, 5, 0.05) !important;
+  --slate-900: rgba(45, 30, 15, 0.0) !important;
+  --slate-850: rgba(60, 40, 20, 0.0) !important;
+  --slate-800: rgba(245, 158, 11, 0.35) !important;
+  
+  --slate-100: #fde047 !important;
+  --slate-150: #fbbf24 !important;
+  --slate-200: #f97316 !important;
+  --slate-300: #fbbf24 !important;
+  --slate-400: #ea580c !important;
+  --slate-500: #ca8a04 !important;
+  --brand-indigo: #eab308 !important;
+  --slate-900-90: rgba(45, 30, 15, 0.0) !important;
+}
+
+.enterprise-bg-agriculteur #welink-main-sidebar,
+.enterprise-bg-agriculteur aside,
+.enterprise-bg-agriculteur main {
+  backdrop-filter: blur(0.5px) !important;
+  -webkit-backdrop-filter: blur(0.5px) !important;
+}
+
+/* ==========================================================================
+   9. ARTISAN D'ART / FABRICANT - Polished mahogany, amber wood, golden ochre & warm terracotta tones matching the wood carving image
+   ========================================================================== */
+.enterprise-bg-artisan {
+  --app-bg-image: url('./assets/images/artisan_art_woodcraft_bg_1781089788361.png') !important;
+  
+  --slate-950: rgba(15, 10, 5, 0.05) !important;
+  --slate-900: rgba(40, 25, 15, 0.0) !important; /* Fully transparent card backgrounds */
+  --slate-850: rgba(55, 35, 20, 0.0) !important; /* Fully transparent panel focus */
+  --slate-800: rgba(217, 119, 6, 0.35) !important; /* Warm terracotta/amber wood-burnished borders */
+  
+  --slate-100: #fcd34d !important; /* Warm burnished honey glow yellow (never white) */
+  --slate-150: #f59e0b !important; /* Bright amber secondary text */
+  --slate-200: #ea580c !important; /* Warm copper/terracotta accent */
+  --slate-300: #fcd34d !important;
+  --slate-400: #d97706 !important; /* Polished wood golden ochre */
+  --slate-500: #b45309 !important; /* Deep walnut brown */
+  --brand-indigo: #ea580c !important; /* Polished warm copper accent buttons */
+  --slate-900-90: rgba(40, 25, 15, 0.0) !important;
+}
+
+html:not(.dark) .enterprise-bg-artisan {
+  --app-bg-image: url('./assets/images/artisan_art_woodcraft_bg_1781089788361.png') !important;
+  --slate-950: rgba(15, 10, 5, 0.05) !important;
+  --slate-900: rgba(40, 25, 15, 0.0) !important;
+  --slate-850: rgba(55, 35, 20, 0.0) !important;
+  --slate-800: rgba(217, 119, 6, 0.35) !important;
+  
+  --slate-100: #fcd34d !important;
+  --slate-150: #f59e0b !important;
+  --slate-200: #ea580c !important;
+  --slate-300: #fcd34d !important;
+  --slate-400: #d97706 !important;
+  --slate-500: #b45309 !important;
+  --brand-indigo: #ea580c !important;
+  --slate-900-90: rgba(40, 25, 15, 0.0) !important;
+}
+
+.enterprise-bg-artisan #welink-main-sidebar,
+.enterprise-bg-artisan aside,
+.enterprise-bg-artisan main {
+  backdrop-filter: blur(0.5px) !important;
+  -webkit-backdrop-filter: blur(0.5px) !important;
+}
+
+/* ==========================================================================
+   10. ÉLEVEUR DE BÉTAIL / VOLAILLE - Warm straw gold, golden honey and rich stable wood tones matching the barn photo
+   ========================================================================== */
+.enterprise-bg-eleveur {
+  --app-bg-image: url('./assets/images/eleveur_stable_wood_bg_1781090474698.png') !important;
+  
+  --slate-950: rgba(15, 12, 5, 0.05) !important;
+  --slate-900: rgba(45, 35, 20, 0.0) !important; /* Fully transparent card backgrounds */
+  --slate-850: rgba(60, 45, 25, 0.0) !important; /* Fully transparent panel focus */
+  --slate-800: rgba(245, 158, 11, 0.35) !important; /* Warm wood-grain borders */
+  
+  --slate-100: #fef08a !important; /* Straw yellow glow (never white) */
+  --slate-150: #fde047 !important; /* Warm straw yellow for secondary text */
+  --slate-200: #eab308 !important; /* Golden amber highlight */
+  --slate-300: #fcd34d !important;
+  --slate-400: #ca8a04 !important; /* Warm golden brown labels */
+  --slate-500: #a16207 !important; /* Honey-brown wheat accents */
+  --brand-indigo: #eab308 !important; /* Bright wheat golden buttons */
+  --slate-900-90: rgba(45, 35, 20, 0.0) !important;
+}
+
+html:not(.dark) .enterprise-bg-eleveur {
+  --app-bg-image: url('./assets/images/eleveur_stable_wood_bg_1781090474698.png') !important;
+  --slate-950: rgba(15, 12, 5, 0.05) !important;
+  --slate-900: rgba(45, 35, 20, 0.0) !important;
+  --slate-850: rgba(60, 45, 25, 0.0) !important;
+  --slate-800: rgba(245, 158, 11, 0.35) !important;
+  
+  --slate-100: #fef08a !important;
+  --slate-150: #fde047 !important;
+  --slate-200: #eab308 !important;
+  --slate-300: #fcd34d !important;
+  --slate-400: #ca8a04 !important;
+  --slate-500: #a16207 !important;
+  --brand-indigo: #eab308 !important;
+  --slate-900-90: rgba(45, 35, 20, 0.0) !important;
+}
+
+.enterprise-bg-eleveur #welink-main-sidebar,
+.enterprise-bg-eleveur aside,
+.enterprise-bg-eleveur main {
+  backdrop-filter: blur(0.5px) !important;
+  -webkit-backdrop-filter: blur(0.5px) !important;
+}
+
+/* ==========================================================================
+   11. POISSONNIER / FRUITS DE LA MER - Cold ocean ice breeze, frosty aquamarine blue, salmon rose and lemon highlights
+   ========================================================================== */
+.enterprise-bg-poissonnier {
+  --app-bg-image: url('./assets/images/poissonnier_seafood_ice_bg_1781093439613.png') !important;
+  
+  --slate-950: rgba(10, 20, 25, 0.05) !important;
+  --slate-900: rgba(15, 30, 40, 0.0) !important; /* Fully transparent card backgrounds */
+  --slate-850: rgba(25, 45, 60, 0.0) !important; /* Fully transparent panel focus */
+  --slate-800: rgba(14, 165, 233, 0.35) !important; /* Soft ocean sky blue borders */
+  
+  --slate-100: #e0f2fe !important; /* Frosty light ice blue (never white) */
+  --slate-150: #bae6fd !important; /* Soft secondary sky blue text */
+  --slate-200: #fda4af !important; /* Salmon pink highlight */
+  --slate-300: #f43f5e !important; /* Vibrant salmon rose */
+  --slate-400: #38bdf8 !important; /* Ocean blue labels */
+  --slate-500: #0284c7 !important; /* Deep sea wave blue */
+  --brand-indigo: #0284c7 !important; /* Ocean blue buttons */
+  --slate-900-90: rgba(15, 30, 40, 0.0) !important;
+}
+
+html:not(.dark) .enterprise-bg-poissonnier {
+  --app-bg-image: url('./assets/images/poissonnier_seafood_ice_bg_1781093439613.png') !important;
+  --slate-950: rgba(10, 20, 25, 0.05) !important;
+  --slate-900: rgba(15, 30, 40, 0.0) !important;
+  --slate-850: rgba(25, 45, 60, 0.0) !important;
+  --slate-800: rgba(14, 165, 233, 0.35) !important;
+  
+  --slate-100: #e0f2fe !important;
+  --slate-150: #bae6fd !important;
+  --slate-200: #fda4af !important;
+  --slate-300: #f43f5e !important;
+  --slate-400: #38bdf8 !important;
+  --slate-500: #0284c7 !important;
+  --brand-indigo: #0284c7 !important;
+  --slate-900-90: rgba(15, 30, 40, 0.0) !important;
+}
+
+.enterprise-bg-poissonnier #welink-main-sidebar,
+.enterprise-bg-poissonnier aside,
+.enterprise-bg-poissonnier main {
+  backdrop-filter: blur(0.5px) !important;
+  -webkit-backdrop-filter: blur(0.5px) !important;
+}
+
+/* ==========================================================================
+   11b. POISSONNERIE - Ice aquamarine blue, ocean deep teal and silver scales
+   ========================================================================== */
+.enterprise-bg-poissonnerie {
+  --app-bg-image: url('./assets/images/poissonnerie_bg_1781095395203.png') !important;
+  
+  --slate-950: rgba(10, 20, 25, 0.05) !important;
+  --slate-900: rgba(15, 30, 40, 0.0) !important; /* Fully transparent card backgrounds */
+  --slate-850: rgba(25, 45, 60, 0.0) !important; /* Fully transparent panel focus */
+  --slate-800: rgba(0, 188, 212, 0.35) !important; /* Soft cyan glassy borders */
+  
+  --slate-100: #e0f2fe !important; /* Frosty light ice blue (never white) */
+  --slate-150: #bae6fd !important; /* Soft secondary sky blue text */
+  --slate-200: #ffd54f !important; /* Scaly amber details */
+  --slate-300: #f43f5e !important; /* Vibrant shrimp red */
+  --slate-400: #00bcd4 !important; /* Ice cyan highlights */
+  --slate-500: #00838f !important; /* Deep sea wave blue */
+  --brand-indigo: #00838f !important; /* Rich ocean wave color for buttons */
+  --slate-900-90: rgba(15, 40, 50, 0.0) !important;
+}
+
+html:not(.dark) .enterprise-bg-poissonnerie {
+  --app-bg-image: url('./assets/images/poissonnerie_bg_1781095395203.png') !important;
+  --slate-950: rgba(10, 20, 25, 0.05) !important;
+  --slate-900: rgba(15, 30, 40, 0.0) !important;
+  --slate-850: rgba(25, 45, 60, 0.0) !important;
+  --slate-800: rgba(0, 188, 212, 0.35) !important;
+  
+  --slate-100: #e0f2fe !important;
+  --slate-150: #bae6fd !important;
+  --slate-200: #ffd54f !important;
+  --slate-300: #f43f5e !important;
+  --slate-400: #00bcd4 !important;
+  --slate-500: #00838f !important;
+  --brand-indigo: #00838f !important;
+  --slate-900-90: rgba(15, 40, 50, 0.0) !important;
+}
+
+.enterprise-bg-poissonnerie #welink-main-sidebar,
+.enterprise-bg-poissonnerie aside,
+.enterprise-bg-poissonnerie main {
+  backdrop-filter: blur(0.5px) !important;
+  -webkit-backdrop-filter: blur(0.5px) !important;
+}
+
+/* ==========================================================================
+   12. BOUCHER / CHARCUTIER - Deep warm red, seasoned amber, terracotta meat highlights
+   ========================================================================== */
+.enterprise-bg-boucher {
+  --app-bg-image: url('./assets/images/boucher_charcuterie_counter_bg_1781094621741.png') !important;
+  
+  --slate-950: rgba(20, 10, 10, 0.05) !important;
+  --slate-900: rgba(30, 15, 15, 0.0) !important; /* Fully transparent card backgrounds */
+  --slate-850: rgba(45, 20, 20, 0.0) !important; /* Fully transparent panel focus */
+  --slate-800: rgba(239, 68, 68, 0.35) !important; /* Soft steak-red borders */
+  
+  --slate-100: #fecdd3 !important; /* Soft warm marbled meat rose (never white) */
+  --slate-150: #fca5a5 !important; /* Secondary soft coral red */
+  --slate-200: #fda4af !important; /* Rose highlight */
+  --slate-300: #f43f5e !important; /* Vibrant blood crimson */
+  --slate-400: #ef4444 !important; /* Spicy paprika red */
+  --slate-500: #b91c1c !important; /* Deep butcher red */
+  --brand-indigo: #dc2626 !important; /* Hot charcoal red buttons */
+  --slate-900-90: rgba(30, 15, 15, 0.0) !important;
+}
+
+html:not(.dark) .enterprise-bg-boucher {
+  --app-bg-image: url('./assets/images/boucher_charcuterie_counter_bg_1781094621741.png') !important;
+  --slate-950: rgba(20, 10, 10, 0.05) !important;
+  --slate-900: rgba(30, 15, 15, 0.0) !important;
+  --slate-850: rgba(45, 20, 20, 0.0) !important;
+  --slate-800: rgba(239, 68, 68, 0.35) !important;
+  
+  --slate-100: #fecdd3 !important;
+  --slate-150: #fca5a5 !important;
+  --slate-200: #fda4af !important;
+  --slate-300: #f43f5e !important;
+  --slate-400: #ef4444 !important;
+  --slate-500: #b91c1c !important;
+  --brand-indigo: #dc2626 !important;
+  --slate-900-90: rgba(30, 15, 15, 0.0) !important;
+}
+
+.enterprise-bg-boucher #welink-main-sidebar,
+.enterprise-bg-boucher aside,
+.enterprise-bg-boucher main {
+  backdrop-filter: blur(0.5px) !important;
+  -webkit-backdrop-filter: blur(0.5px) !important;
+}
+
+/* ==========================================================================
+   TEXT-COLOR SAFEGUARD OVERRIDES FOR PERSISTENT DARK SHOWCASES
+   ========================================================================== */
+html:not(.dark) .enterprise-bg-hotel .text-white,
+html:not(.dark) .enterprise-bg-alimentation .text-white,
+html:not(.dark) .enterprise-bg-secretariat .text-white,
+html:not(.dark) .enterprise-bg-agriculteur .text-white,
+html:not(.dark) .enterprise-bg-artisan .text-white,
+html:not(.dark) .enterprise-bg-eleveur .text-white,
+html:not(.dark) .enterprise-bg-poissonnier .text-white,
+html:not(.dark) .enterprise-bg-boucher .text-white,
+html:not(.dark) .enterprise-bg-poissonnerie .text-white,
+html:not(.dark) .enterprise-bg-hotel h1,
+html:not(.dark) .enterprise-bg-alimentation h1,
+html:not(.dark) .enterprise-bg-secretariat h1,
+html:not(.dark) .enterprise-bg-agriculteur h1,
+html:not(.dark) .enterprise-bg-artisan h1,
+html:not(.dark) .enterprise-bg-eleveur h1,
+html:not(.dark) .enterprise-bg-poissonnier h1,
+html:not(.dark) .enterprise-bg-boucher h1,
+html:not(.dark) .enterprise-bg-poissonnerie h1,
+html:not(.dark) .enterprise-bg-hotel h2,
+html:not(.dark) .enterprise-bg-alimentation h2,
+html:not(.dark) .enterprise-bg-secretariat h2,
+html:not(.dark) .enterprise-bg-agriculteur h2,
+html:not(.dark) .enterprise-bg-artisan h2,
+html:not(.dark) .enterprise-bg-eleveur h2,
+html:not(.dark) .enterprise-bg-poissonnier h2,
+html:not(.dark) .enterprise-bg-boucher h2,
+html:not(.dark) .enterprise-bg-poissonnerie h2,
+html:not(.dark) .enterprise-bg-hotel h3,
+html:not(.dark) .enterprise-bg-alimentation h3,
+html:not(.dark) .enterprise-bg-secretariat h3,
+html:not(.dark) .enterprise-bg-agriculteur h3,
+html:not(.dark) .enterprise-bg-artisan h3,
+html:not(.dark) .enterprise-bg-eleveur h3,
+html:not(.dark) .enterprise-bg-poissonnier h3,
+html:not(.dark) .enterprise-bg-boucher h3,
+html:not(.dark) .enterprise-bg-poissonnerie h3,
+html:not(.dark) .enterprise-bg-hotel h4,
+html:not(.dark) .enterprise-bg-alimentation h4,
+html:not(.dark) .enterprise-bg-secretariat h4,
+html:not(.dark) .enterprise-bg-agriculteur h4,
+html:not(.dark) .enterprise-bg-artisan h4,
+html:not(.dark) .enterprise-bg-eleveur h4,
+html:not(.dark) .enterprise-bg-poissonnier h4,
+html:not(.dark) .enterprise-bg-boucher h4,
+html:not(.dark) .enterprise-bg-poissonnerie h4,
+html:not(.dark) .enterprise-bg-hotel h5,
+html:not(.dark) .enterprise-bg-alimentation h5,
+html:not(.dark) .enterprise-bg-secretariat h5,
+html:not(.dark) .enterprise-bg-agriculteur h5,
+html:not(.dark) .enterprise-bg-artisan h5,
+html:not(.dark) .enterprise-bg-eleveur h5,
+html:not(.dark) .enterprise-bg-poissonnier h5,
+html:not(.dark) .enterprise-bg-boucher h5,
+html:not(.dark) .enterprise-bg-poissonnerie h5,
+html:not(.dark) .enterprise-bg-hotel h6,
+html:not(.dark) .enterprise-bg-alimentation h6,
+html:not(.dark) .enterprise-bg-secretariat h6,
+html:not(.dark) .enterprise-bg-agriculteur h6,
+html:not(.dark) .enterprise-bg-artisan h6,
+html:not(.dark) .enterprise-bg-eleveur h6,
+html:not(.dark) .enterprise-bg-poissonnier h6,
+html:not(.dark) .enterprise-bg-boucher h6,
+html:not(.dark) .enterprise-bg-poissonnerie h6,
+html:not(.dark) .enterprise-bg-hotel p,
+html:not(.dark) .enterprise-bg-alimentation p,
+html:not(.dark) .enterprise-bg-secretariat p,
+html:not(.dark) .enterprise-bg-agriculteur p,
+html:not(.dark) .enterprise-bg-artisan p,
+html:not(.dark) .enterprise-bg-eleveur p,
+html:not(.dark) .enterprise-bg-poissonnier p,
+html:not(.dark) .enterprise-bg-boucher p,
+html:not(.dark) .enterprise-bg-poissonnerie p,
+html:not(.dark) .enterprise-bg-hotel span,
+html:not(.dark) .enterprise-bg-alimentation span,
+html:not(.dark) .enterprise-bg-secretariat span,
+html:not(.dark) .enterprise-bg-agriculteur span,
+html:not(.dark) .enterprise-bg-artisan span,
+html:not(.dark) .enterprise-bg-eleveur span,
+html:not(.dark) .enterprise-bg-poissonnier span,
+html:not(.dark) .enterprise-bg-boucher span,
+html:not(.dark) .enterprise-bg-poissonnerie span {
+  color: #0f172a !important;
+}
+
+/* ==========================================================================
+   IMMERSIBLE CLIENT SHOWCASE PORTAL OVERRIDES - NO SOLID DARK CARDS
+   ========================================================================== */
+#shop-showcase-immersive {
+  background-color: transparent !important;
+}
+
+/* Remove solid card and footer backings so everything floats directly on the background in dark mode, EXCEPT for note de visite (reviews section) and panier (cart dropdown) */
+.dark #shop-showcase-immersive div:not(#cart-dropdown-menu):not(#cart-dropdown-menu *):not(#boutique-reviews-section):not(#boutique-reviews-section *):not(form):not(input):not(select):not(button):not([class*="bg-amber"]):not([class*="bg-rose"]):not([class*="bg-indigo"]):not([class*="active"]):not(.h-44):not(.relative),
+.dark #shop-showcase-immersive section:not(#boutique-reviews-section),
+.dark #shop-showcase-immersive footer,
+.dark #shop-showcase-immersive .grid > div:not(#boutique-reviews-section *),
+.dark #shop-showcase-immersive #why-us-details-grid div {
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* In light mode, provide beautiful semi-transparent white cards with perfect opacity so text is 100% visible */
+html:not(.dark) #shop-showcase-immersive div:not(#cart-dropdown-menu):not(#cart-dropdown-menu *):not(#boutique-reviews-section):not(#boutique-reviews-section *):not(form):not(input):not(select):not(button):not([class*="bg-amber"]):not([class*="bg-rose"]):not([class*="bg-indigo"]):not([class*="active"]):not(.h-44):not(.relative),
+html:not(.dark) #shop-showcase-immersive section:not(#boutique-reviews-section),
+html:not(.dark) #shop-showcase-immersive footer,
+html:not(.dark) #shop-showcase-immersive .grid > div:not(#boutique-reviews-section *),
+html:not(.dark) #shop-showcase-immersive #why-us-details-grid div {
+  background-color: rgba(255, 255, 255, 0.60) !important;
+  background: rgba(255, 255, 255, 0.60) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  opacity: 1.0 !important;
+}
+
+/* Add an elegant, high-contrast, fully visible white drop-shadow for white text or black drop-shadow for general text in dark mode */
+.dark #shop-showcase-immersive h1,
+.dark #shop-showcase-immersive h2,
+.dark #shop-showcase-immersive h3,
+.dark #shop-showcase-immersive h4,
+.dark #shop-showcase-immersive h5,
+.dark #shop-showcase-immersive h6,
+.dark #shop-showcase-immersive p,
+.dark #shop-showcase-immersive span:not([class*="bg-"]):not([class*="text-slate-850"]):not(.rounded-full),
+.dark #shop-showcase-immersive li {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 
+               0 2px 6px rgba(0, 0, 0, 0.95), 
+               0 0 10px rgba(0, 0, 0, 0.70) !important;
+}
+
+/* Remove text shadows in light mode to keep text extremely crisp and clear */
+html:not(.dark) #shop-showcase-immersive h1,
+html:not(.dark) #shop-showcase-immersive h2,
+html:not(.dark) #shop-showcase-immersive h3,
+html:not(.dark) #shop-showcase-immersive h4,
+html:not(.dark) #shop-showcase-immersive h5,
+html:not(.dark) #shop-showcase-immersive h6,
+html:not(.dark) #shop-showcase-immersive p,
+html:not(.dark) #shop-showcase-immersive span,
+html:not(.dark) #shop-showcase-immersive li {
+  text-shadow: none !important;
+  color: #0f172a !important;
+}
+
+/* Ensure product item cards and value cards have transparent background, no borders, no cards in dark mode */
+.dark #shop-showcase-immersive .grid > div,
+.dark #shop-showcase-immersive #why-us-details-grid div,
+.dark #shop-showcase-immersive #why-us-details-grid > div,
+.dark #shop-showcase-immersive [id^="why-us-"] div,
+.dark #shop-showcase-immersive [id^="why-us-"] > div {
+  background-color: transparent !important;
+  background: transparent !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-radius: 1rem !important;
+  box-shadow: none !important;
+}
+
+/* In light mode, provide solid rounded-2xl margins for product / info cards with soft hover effects */
+html:not(.dark) #shop-showcase-immersive .grid > div,
+html:not(.dark) #shop-showcase-immersive #why-us-details-grid div,
+html:not(.dark) #shop-showcase-immersive #why-us-details-grid > div,
+html:not(.dark) #shop-showcase-immersive [id^="why-us-"] div,
+html:not(.dark) #shop-showcase-immersive [id^="why-us-"] > div {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  background: rgba(255, 255, 255, 0.75) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
+  opacity: 1.0 !important;
+}
+
+/* Specific highlight on hover for product or value cards */
+.dark #shop-showcase-immersive .grid > div:hover,
+.dark #shop-showcase-immersive #why-us-details-grid div:hover,
+.dark #shop-showcase-immersive #why-us-details-grid > div:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: none !important;
+}
+
+html:not(.dark) #shop-showcase-immersive .grid > div:hover,
+html:not(.dark) #shop-showcase-immersive #why-us-details-grid div:hover,
+html:not(.dark) #shop-showcase-immersive #why-us-details-grid > div:hover {
+  background-color: rgba(255, 255, 255, 1.0) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  transform: translateY(-2px);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Maintain a beautiful, translucent header navigation bar in dark mode */
+.dark #shop-showcase-immersive header {
+  background-color: rgba(12, 10, 8, 0.55) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Elegant high-contrast white header navigation bar in light mode */
+html:not(.dark) #shop-showcase-immersive header {
+  background-color: rgba(255, 255, 255, 0.70) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Ensure the immersive slide-over and forms look correct and fully functional in dark mode */
+.dark #shop-showcase-immersive form,
+.dark #shop-showcase-immersive input,
+.dark #shop-showcase-immersive select {
+  background-color: rgba(20, 15, 10, 0.75) !important;
+  border: 1px solid rgba(255, 255, 255, 0.20) !important;
+  color: #ffffff !important;
+}
+
+/* High contrast inputs and select fields in light mode */
+html:not(.dark) #shop-showcase-immersive form,
+html:not(.dark) #shop-showcase-immersive input,
+html:not(.dark) #shop-showcase-immersive select {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  color: #0f172a !important;
+}
+
+/* ==========================================================================
+   FORCE MAXIMUM OPACITY & FULL VISIBILITY (NO OVERFLOW/SCROLL) ON NOTE DE VISITE & PANIER
+   ========================================================================== */
+
+/* 1. Visit reviews notes (Note de visite) cards */
+#boutique-reviews-section .bg-slate-950,
+#boutique-reviews-section .bg-slate-900,
+#boutique-reviews-section .bg-slate-100,
+#boutique-reviews-section [class*="bg-slate-950"],
+#boutique-reviews-section [class*="bg-slate-900"] {
+  background-color: #0c101d !important;
+  background: #0c101d !important;
+  opacity: 1.0 !important;
+  border: 1px solid rgba(99, 102, 241, 0.40) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6) !important;
+  overflow: visible !important;
+}
+
+/* Light mode support for Reviews */
+html:not(.dark) #boutique-reviews-section .bg-slate-950,
+html:not(.dark) #boutique-reviews-section .bg-slate-900,
+html:not(.dark) #boutique-reviews-section .bg-slate-100,
+html:not(.dark) #boutique-reviews-section [class*="bg-slate-950"],
+html:not(.dark) #boutique-reviews-section [class*="bg-slate-900"] {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  opacity: 1.0 !important;
+  border: 1px solid rgba(79, 70, 229, 0.30) !important;
+  color: #0f172a !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05) !important;
+  overflow: visible !important;
+}
+
+/* 2. Cart Dropdown (Panier) premium solid card style with no overflow wrapper limits */
+#cart-dropdown-menu {
+  background-color: #0c101d !important;
+  background: #0c101d !important;
+  opacity: 1.0 !important;
+  border: 2px solid #4f46e5 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.95), 0 0 20px rgba(79, 70, 229, 0.25) !important;
+  overflow: visible !important;
+}
+
+/* Ensure child elements inside reviews and cart dropdowns do not get transparent background or text shadows */
+#cart-dropdown-menu div,
+#cart-dropdown-menu span,
+#cart-dropdown-menu button,
+#boutique-reviews-section div,
+#boutique-reviews-section p,
+#boutique-reviews-section span,
+#boutique-reviews-section label,
+#boutique-reviews-section h1,
+#boutique-reviews-section h2,
+#boutique-reviews-section h3,
+#boutique-reviews-section h4 {
+  text-shadow: none !important; /* Clear normal text for perfect readability inside solid cards */
+}
+
+html:not(.dark) #cart-dropdown-menu {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  opacity: 1.0 !important;
+  border: 2px solid #4f46e5 !important;
+  color: #0f172a !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 20px rgba(79, 70, 229, 0.1) !important;
+  overflow: visible !important;
+}
+
+/* Ensure no child scroll limits or overflow clipping triggers within cart-dropdown-menu */
+#cart-dropdown-menu div[class*="overflow-y-auto"],
+#cart-dropdown-menu div[class*="max-h-"] {
+  max-height: none !important;
+  overflow: visible !important;
+  overflow-y: visible !important;
+}
+
+/* ==========================================================================
+   GLOBAL TEXT ACCESSIBILITY & SMOOTH FONT SCALE ENHANCEMENT
+   ========================================================================== */
+html, body {
+  font-size: 15px !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dynamically upscale Tailwind text utility classes so details are comfortable to read */
+.text-\[8px\] { font-size: 10.5px !important; }
+.text-\[9px\] { font-size: 11.5px !important; }
+.text-\[10px\] { font-size: 12.5px !important; }
+.text-\[11px\] { font-size: 13.5px !important; }
+.text-xs { font-size: 14px !important; }
+.text-sm { font-size: 15.5px !important; }
+.text-base { font-size: 17px !important; }
+.text-md { font-size: 18.5px !important; }
+.text-lg { font-size: 21px !important; }
+.text-xl { font-size: 24px !important; }
+.text-2xl { font-size: 28px !important; }
+
+/* Gentle line height adjustments for perfect visual flow */
+p, label, input, textarea, button, td, th {
+  line-height: 1.5 !important;
+}
+
+/* Ensure that in light mode, all enterprise background classes redefine their text variables to rich, high-contrast dark colors and card backgrounds to clean white-glass cards */
+html:not(.dark) .enterprise-bg-hotel,
+html:not(.dark) .enterprise-bg-vetement,
+html:not(.dark) .enterprise-bg-restaurant,
+html:not(.dark) .enterprise-bg-supermarche,
+html:not(.dark) .enterprise-bg-alimentation,
+html:not(.dark) .enterprise-bg-secretariat,
+html:not(.dark) .enterprise-bg-agriculteur,
+html:not(.dark) .enterprise-bg-artisan,
+html:not(.dark) .enterprise-bg-eleveur,
+html:not(.dark) .enterprise-bg-poissonnier,
+html:not(.dark) .enterprise-bg-poissonnerie,
+html:not(.dark) .enterprise-bg-boucher,
+html:not(.dark) .enterprise-bg-marche,
+html:not(.dark) .enterprise-bg-default {
+  --slate-100: #0f172a !important; /* Deep title color */
+  --slate-150: #1e293b !important; /* Dark slate text */
+  --slate-200: #334155 !important; /* Muted gray text */
+  --slate-300: #0f172a !important;
+  --slate-400: #475569 !important;
+  --slate-500: #64748b !important;
+  
+  --slate-950: rgba(255, 255, 255, 0.95) !important; /* Soft white background */
+  --slate-900: rgba(255, 255, 255, 0.90) !important; /* Clean card background */
+  --slate-850: rgba(255, 255, 255, 0.85) !important; /* Frosted card backing */
+  --slate-800: rgba(0, 0, 0, 0.12) !important; /* Subtle dark border in light mode */
+  --slate-900-90: rgba(255, 255, 255, 0.92) !important;
+}
+
+

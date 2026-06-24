@@ -1,0 +1,6 @@
+{
+  "name": "WeLink",
+  "description": "Application de startup pour clients, entreprises (multisectorielles) et fournisseurs (agriculteurs, artisans, éleveurs) avec discussion IA intégrée.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
